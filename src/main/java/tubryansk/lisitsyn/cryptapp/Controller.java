@@ -21,15 +21,15 @@ public class Controller {
     @FXML
     public Button ButtonChooseKey;
     @FXML
-    public Button ButtonApply;
-    @FXML
     public TextArea TextSrc;
     @FXML
     public Button ButtonChooseFile;
     @FXML
     public Button ButtonEncrypt;
     @FXML
-    public TextArea TextCode;
+    public TextArea TextCrypt;
+    @FXML
+    public TextArea TextDecrypt;
     @FXML
     public Button ButtonSave;
     @FXML
@@ -80,7 +80,7 @@ public class Controller {
         File file = fileChooser.showSaveDialog(null);
 
         if (file != null) {
-            saveTextToFile(TextCode.getText(), file);
+            saveTextToFile(TextCrypt.getText(), file);
         }
     }
 
@@ -94,10 +94,6 @@ public class Controller {
         }
     }
 
-    public void buttonClickApply(MouseEvent mouseEvent) {
-
-    }
-
     public void buttonClickEncrypt(MouseEvent mouseEvent) {
         if (TextSrc.getText().isEmpty())
             return;
@@ -107,16 +103,16 @@ public class Controller {
             key = TextKey.getText().getBytes(StandardCharsets.UTF_8);
         byte[] newText = RC6.encrypt(text, key);
         temp = newText;
-        TextCode.setText(new String(newText, StandardCharsets.UTF_8));
+        TextCrypt.setText(new String(newText, StandardCharsets.UTF_8));
     }
 
     public void buttonClickDecrypt(MouseEvent mouseEvent) {
-        if (TextCode.getText().isEmpty())
+        if (TextCrypt.getText().isEmpty())
             return;
         byte[] key = "1234567890".getBytes(StandardCharsets.UTF_8);
         if (!TextKey.getText().isEmpty())
             key = TextKey.getText().getBytes(StandardCharsets.UTF_8);
         byte[] text = RC6.decrypt(temp, key);
-        TextCode.setText(new String(text, StandardCharsets.UTF_8));
+        TextDecrypt.setText(new String(text, StandardCharsets.UTF_8));
     }
 }
