@@ -3,7 +3,17 @@ package tubryansk.lisitsyn.cryptapp;
 import java.util.Arrays;
 
 public class RC6 {
-    private static int w=32, r=20;
+    private static int w=32;
+
+    public static int getR() {
+        return r;
+    }
+
+    public static void setR(int r) {
+        RC6.r = r;
+    }
+
+    private static int r=20;
     private static final double e = Math.E;
     private static final double goldenRatio = 1.6180339887496482;
 

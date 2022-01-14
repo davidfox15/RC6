@@ -18,7 +18,7 @@
                             <children>
                                 <VBox alignment="TOP_CENTER" prefHeight="671.0" prefWidth="1000.0">
                                     <children>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ключ">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ключ произвольной длинны">
                                             <VBox.margin>
                                                 <Insets bottom="10.0" top="10.0" />
                                             </VBox.margin>
@@ -33,7 +33,16 @@
                                                 <Insets bottom="10.0" top="10.0" />
                                             </VBox.margin>
                                         </Button>
+                              <Label text="R - кол-во раундов">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="50.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="TextR" maxWidth="900.0" />
                                     </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                                 </VBox>
                             </children>
                         </AnchorPane>
@@ -51,12 +60,35 @@
                                             </VBox.margin>
                                         </Label>
                                         <TextArea fx:id="TextSrc" maxWidth="900.0" prefHeight="200.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER_LEFT" maxWidth="900.0" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="В виде байтов">
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="byteText" maxWidth="900.0" prefWidth="700.0" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </HBox>
                               <Label text="Зашифрованный">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
                               <TextArea fx:id="TextCrypt" maxWidth="900.0" prefHeight="200.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER_LEFT" maxWidth="900.0" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="В виде байтов">
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="byteCrypt" maxWidth="900.0" prefWidth="700.0" />
+                                 </children>
+                              </HBox>
                               <Label text="Расшифрованный">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
