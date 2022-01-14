@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tubryansk.lisitsyn.cryptapp.Controller">
+    <children>
+        <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Настройки">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="370.0" prefWidth="600.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ключ">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                            </VBox.margin>
+                                        </Text>
+                                        <TextField fx:id="TextKey">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Button fx:id="ButtonChooseKey" mnemonicParsing="false" onMouseClicked="#buttonClickChooseKey" text="Загрузить из файла">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Button fx:id="ButtonApply" mnemonicParsing="false" onMouseClicked="#buttonClickApply" text="Применить">
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Текст">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="370.0" prefWidth="600.0">
+                                    <children>
+                                        <Label text="Исходный текст">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <TextArea fx:id="TextSrc" prefHeight="200.0" prefWidth="200.0" />
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Button fx:id="ButtonChooseFile" mnemonicParsing="false" onMouseClicked="#buttonClickChooseFile" text="Выбрать файл">
+                                                    <opaqueInsets>
+                                                        <Insets />
+                                                    </opaqueInsets>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="ButtonEncrypt" mnemonicParsing="false" onMouseClicked="#buttonClickEncrypt" text="Зашифровать">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Шифровка">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="370.0" prefWidth="600.0">
+                                    <children>
+                                        <Label text="Зашифрованный текст">
+                                            <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <TextArea fx:id="TextCode" prefHeight="200.0" prefWidth="200.0" />
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Button fx:id="ButtonSave" mnemonicParsing="false" onMouseClicked="#buttonClickSave" text="Сохранить файл">
+                                                    <opaqueInsets>
+                                                        <Insets />
+                                                    </opaqueInsets>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="ButtonDecrypt" mnemonicParsing="false" onMouseClicked="#buttonClickDecrypt" text="Расшифровать">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
